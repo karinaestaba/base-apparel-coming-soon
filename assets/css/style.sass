@@ -88,7 +88,7 @@ button
   width: 65px
   border-radius: 30px
   background-color: $soft_red
-  height: 100%
+  height: 92%
   border: 0
   outline: none
   display: flex
@@ -106,3 +106,58 @@ button
   &:active
     opacity: .9
     cursor: pointer
+
+@media screen and ( min-width: 998px )
+  body
+    background: url('../images/bg-pattern-desktop.svg'), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+
+  .container
+    padding-left: 20%
+    padding-right: 20%
+
+  h1
+    font-size: 66px
+    line-height: 72px
+    letter-spacing: 15px
+    margin-bottom: 15px
+
+  form
+    height: 57px
+    max-width: 446px
+
+  button
+    width: 101px
+
+  input
+    padding: 30px
+
+  main
+    display: grid
+    grid-template-areas: "c-head c-hero" "c-content c-hero"
+    grid-template-columns: 1fr auto
+    grid-template-rows: auto 1fr
+
+  .main-content
+    grid-area: c-content
+    text-align: left
+    padding-top: 65px
+    width: 100%
+
+    p
+      white-space: pre-line
+      margin-bottom: 40px
+      font-size: 16px
+      line-height: 28px
+
+  .main-header
+    grid-area: c-head
+    width: 100%
+    height: auto
+    padding: 58px 20%
+
+    .logo
+      > img
+        width: 157px
+
+  .hero
+    grid-area: c-hero
