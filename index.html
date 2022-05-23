@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <title>Base Apparel coming soon page</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <header class="main-header container">
+      <figure class="logo">
+        <img src="assets/images/logo.svg" alt="Basel Apparel" width="100">
+      </figure>
+    </header>
+    <picture class="hero">
+      <source media="(max-width: 997px)" srcset="assets/images/hero-mobile.jpg">
+      <source media="(min-width: 998px)" srcset="assets/images/hero-desktop.jpg">
+      <img src="assets/images/hero-mobile.jpg" alt="Banner">
+    </picture>
+    <section class="main-content container">
+      <h1>We're 
+        <b>coming</b>
+        <b>soon</b></h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store. 
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        <form action="/" class="suscribe-form" id="suscribeForm">
+          <input type="email" name="email" id="email" placeholder="Email Address">
+          <button type="submit">
+            <img src="assets/images/icon-arrow.svg" alt=">" width="12">
+          </button>
+        </form>
+      </section>
+  </main>
+</body>
+</html>

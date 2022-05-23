@@ -1,0 +1,108 @@
+$desaturated_red: #d6b2b6
+$soft_red: hsl(0, 93%, 68%)
+$dark_grayish_red: hsl(0, 6%, 24%)
+$font_size: 16px
+$font_family: 'Josefin Sans', sans-serif
+
+*,
+*::after,
+*::before
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html,
+body
+  height: 100%
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+
+body,
+button,
+a,
+input
+  font-family: $font_family
+  font-size: $font_size
+  line-height: 22px
+  color: $desaturated_red
+
+h1
+  font-size: 41px
+  font-weight: 300
+  white-space: pre-line
+  line-height: 43px
+  text-transform: uppercase
+  letter-spacing: 10px
+  margin-bottom: 12px
+
+b
+  color: $dark_grayish_red
+  font-weight: 600
+
+.container
+  max-width: 1220px
+  margin: 0 auto
+  padding: 31px
+
+.main
+  &-header
+    background-color: white
+    height: 84px
+    padding: 31px
+
+  &-content
+    text-align: center
+    padding-top: 64px
+
+    p
+      margin-bottom: 33px
+      font-size: 14px
+
+.hero
+  display: block
+  
+  img
+    display: block
+      
+form
+  border: 1px solid #dbcbcc
+  height: 48px
+  border-radius: 30px
+  display: grid
+  grid-template-columns: 1fr auto
+  gap: 10px
+
+input
+  background: none
+  border: 0
+  outline: none
+  color: $desaturated_red
+  height: 100%
+  padding: 23px
+  font-size: 15px
+  white-space: nowrap
+
+  &::placeholder
+    color: $desaturated_red
+
+button
+  width: 65px
+  border-radius: 30px
+  background-color: $soft_red
+  height: 100%
+  border: 0
+  outline: none
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
+  box-shadow: 0 5px 20px 3px hsl(0, 80%, 86%)
+
+  &:hover
+    opacity: .7
+    cursor: pointer
+    transition: opacity .5s
+
+  &:active
+    opacity: .9
+    cursor: pointer
