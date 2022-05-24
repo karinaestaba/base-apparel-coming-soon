@@ -13,8 +13,9 @@ $font_family: 'Josefin Sans', sans-serif
 
 html,
 body
-  height: 100%
+  min-height: 100%
   background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+  background-repeat: no-repeat
 
 body,
 button,
@@ -38,6 +39,13 @@ b
   color: $dark_grayish_red
   font-weight: 600
 
+main
+  min-height: 100vh
+
+form
+  .error
+    display: none
+
 .container
   max-width: 1220px
   margin: 0 auto
@@ -45,13 +53,14 @@ b
 
 .main
   &-header
-    background-color: white
+    background: none
     height: 84px
     padding: 31px
 
   &-content
     text-align: center
     padding-top: 64px
+    margin-bottom: 40px
 
     p
       margin-bottom: 33px
@@ -59,61 +68,132 @@ b
 
 .hero
   display: block
+  overflow: hidden
   
   img
     display: block
       
-form
-  border: 1px solid #dbcbcc
-  height: 48px
-  border-radius: 30px
+form 
   display: grid
-  grid-template-columns: 1fr auto
-  gap: 10px
+  grid-template-columns: 1fr
+  gap: 20px
+  margin: 0 auto
+
+fieldset
+  position: relative
+  border: none
 
 input
   background: none
-  border: 0
+  border: 1px solid #dbcbcc
+  height: 48px
+  border-radius: 30px
   outline: none
-  color: $desaturated_red
-  height: 100%
+  color: $dark_grayish_red
   padding: 23px
   font-size: 15px
   white-space: nowrap
 
+  + img
+    display: none
+    opacity: 0
+
   &::placeholder
     color: $desaturated_red
 
+  &:not(:focus):invalid
+    border: 2px solid $soft_red
+
+    ~ .error
+      position: absolute
+      display: block
+      margin-left: 30px
+      margin-top: 7px
+      font-size: 13px
+      line-height: 18px
+      animation: shake .5s ease-in-out 0s 1 normal forwards
+
+    + img
+      display: block
+      opacity: 1
+      position: absolute
+      right: 17px
+      bottom: 15px
+
 button
-  width: 65px
+  width: 100%
+  min-height: 50px
   border-radius: 30px
   background-color: $soft_red
-  height: 92%
   border: 0
   outline: none
   display: flex
   justify-content: center
   align-items: center
+  z-index: 1
 
   background: linear-gradient(90deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%))
   box-shadow: 0 5px 20px 3px hsl(0, 80%, 86%)
 
   &:hover
-    opacity: .7
     cursor: pointer
+    color: #f5bbbb
     transition: opacity .5s
 
   &:active
     opacity: .9
     cursor: pointer
 
-@media screen and ( min-width: 998px )
+  &::before
+    content: 'Subscribe'
+    color: white
+
+  > img
+    display: none
+
+@media screen and ( min-width: 375px )
+  form
+    height: 48px
+    grid-template-columns: 1fr auto
+    gap: 0
+    align-content: center
+
+  input
+    width: 110%
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+
+  button
+    width: 65px
+    height: 100%
+
+    &::before
+      display: none
+
+    > img
+      display: block
+
+  .hero
+    img
+      object-fit: cover
+      max-height: 500px
+      width: 100%
+      object-position: top
+
+@media screen and ( min-width: 558px )
+  form
+    max-width: 70%
+
+@media screen and ( min-width: 768px )
   body
     background: url('../images/bg-pattern-desktop.svg'), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%))
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center bottom
 
   .container
-    padding-left: 20%
-    padding-right: 20%
+    padding-left: 10%
+    padding-right: 10%
 
   h1
     font-size: 66px
@@ -124,17 +204,18 @@ button
   form
     height: 57px
     max-width: 446px
+    margin: 0
 
   button
     width: 101px
 
   input
-    padding: 30px
+    padding: 26px 35% 26px 30px
 
   main
     display: grid
     grid-template-areas: "c-head c-hero" "c-content c-hero"
-    grid-template-columns: 1fr auto
+    grid-template-columns: minmax(57%, 1.5fr) auto
     grid-template-rows: auto 1fr
 
   .main-content
@@ -142,10 +223,10 @@ button
     text-align: left
     padding-top: 65px
     width: 100%
+    margin-bottom: 0
 
     p
-      white-space: pre-line
-      margin-bottom: 40px
+      margin-bottom: 37px
       font-size: 16px
       line-height: 28px
 
@@ -153,7 +234,7 @@ button
     grid-area: c-head
     width: 100%
     height: auto
-    padding: 58px 20%
+    padding: 58px 10%
 
     .logo
       > img
@@ -161,3 +242,37 @@ button
 
   .hero
     grid-area: c-hero
+
+    img
+      max-height: none
+      height: 100%
+
+@media screen and ( min-width: 1220px )
+  .container
+    padding-left: 20%
+    padding-right: 20%
+
+  .main-header
+    padding: 58px 20%
+
+  .main-content
+    p
+      white-space: pre-line
+
+@media screen and ( min-width: 1900px )
+  main
+    max-width: 1220px
+    margin: 0 auto
+
+@keyframes shake
+  0%
+    transform: translateX(0)
+  
+  25%
+    transform: translateX(-5px)
+
+  50%
+    transform: translateX(5px)
+
+  100%
+    transform: translateX()

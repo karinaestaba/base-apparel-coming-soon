@@ -16,8 +16,8 @@
       </figure>
     </header>
     <picture class="hero">
-      <source media="(max-width: 997px)" srcset="assets/images/hero-mobile.jpg">
-      <source media="(min-width: 998px)" srcset="assets/images/hero-desktop.jpg">
+      <source media="(max-width: 375px)" srcset="assets/images/hero-mobile.jpg">
+      <source media="(min-width: 376px)" srcset="assets/images/hero-desktop.jpg">
       <img src="assets/images/hero-mobile.jpg" alt="Banner">
     </picture>
     <section class="main-content container">
@@ -27,13 +27,19 @@
       <p>Hello fellow shoppers! We're currently building our new
         fashion store. Add your email below to stay up-to-date with
         announcements and our launch deals.</p>
-        <form action="/" class="suscribe-form" id="suscribeForm">
-          <input type="email" name="email" id="email" placeholder="Email Address">
-          <button type="submit">
+        <form action="/" id="subscribeForm">
+          <fieldset>
+            <input type="email" name="email" id="subscribeEmail" placeholder="Email Address" required autofocus minlength="10">
+            <img src="assets/images/icon-error.svg" alt="x" width="25">
+
+            <span class="error">Please provide a valid email</span>
+          </fieldset>
+          <button type="button" id="subscribeButton">
             <img src="assets/images/icon-arrow.svg" alt=">" width="12">
           </button>
         </form>
       </section>
   </main>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
