@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base Apparel | Coming soon</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/fonts.css">  
+
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <title>Base Apparel coming soon page</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -21,24 +25,31 @@
       <img src="assets/images/hero-mobile.jpg" alt="Banner">
     </picture>
     <section class="main-content container">
-      <h1>We're 
-        <b>coming</b>
-        <b>soon</b></h1>
-      <p>Hello fellow shoppers! We're currently building our new
-        fashion store. Add your email below to stay up-to-date with
-        announcements and our launch deals.</p>
-        <form action="/" id="subscribeForm">
-          <fieldset>
-            <input type="email" name="email" id="subscribeEmail" placeholder="Email Address" required autofocus minlength="10">
-            <img src="assets/images/icon-error.svg" alt="x" width="25">
+      <div class="body-content">
+        <h1>We're 
+          <b>coming</b>
+          <b>soon</b></h1>
+        <p>Hello fellow shoppers! We're currently building our new
+          fashion store. Add your email below to stay up-to-date with
+          announcements and our launch deals.</p>
+          <form action="/" id="subscribeForm">
+            <fieldset>
+              <input type="email" name="email" id="subscribeEmail" placeholder="Email Address" required autofocus minlength="10">
+              <img src="assets/images/icon-error.svg" alt="x" width="25">
 
-            <span class="error">Please provide a valid email</span>
-          </fieldset>
-          <button type="button" id="subscribeButton">
-            <img src="assets/images/icon-arrow.svg" alt=">" width="12">
-          </button>
-        </form>
-      </section>
+              <span class="error">Please provide a valid email</span>
+            </fieldset>
+            <button type="button" id="subscribeButton">
+              <img src="assets/images/icon-arrow.svg" alt=">" width="12">
+            </button>
+          </form>
+      </div>
+         
+      <footer class="main-footer">
+        Challenge by Frontend Mentor.  
+        Coded by <a href="https://www.frontendmentor.io/profile/karinaestaba/" title="Explora más proyectos :D">&nbsp;Karina Estaba  <img src="assets/images/link.svg" alt="Link" width="10px" class="icon-link"></a>
+      </footer>
+    </section>
   </main>
   <script src="assets/js/main.js"></script>
 </body>

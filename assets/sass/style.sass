@@ -59,11 +59,20 @@ form
   &-content
     text-align: center
     padding-top: 64px
-    margin-bottom: 40px
+    height: 100%
+    display: flex
+    flex-direction: column
+    min-height: 100%
+    gap: 50px
 
     p
       margin-bottom: 33px
       font-size: 14px
+
+.body-content
+  display: flex
+  flex-direction: column
+  flex-grow: 1
 
 .hero
   display: block
@@ -104,9 +113,8 @@ input
     border: 2px solid $soft_red
 
     ~ .error
-      position: absolute
+      position: relative
       display: block
-      margin-left: 30px
       margin-top: 7px
       font-size: 13px
       line-height: 18px
@@ -117,7 +125,7 @@ input
       opacity: 1
       position: absolute
       right: 17px
-      bottom: 15px
+      bottom: 50%
 
 button
   width: 100%
@@ -150,12 +158,41 @@ button
   > img
     display: none
 
+.main-footer
+  font-size: 12px
+  flex-grow: 0
+  align-self: flex-end
+  text-align: center
+  width: 100%
+  margin-top: 20px
+  color: #ccc
+
+  a
+    font-size: 12px
+    text-decoration: none
+    color: $desaturated_red
+    white-space: nowrap
+    transition: all .5s ease
+
+    &:hover
+      color: darken($desaturated_red, 10)
+
 @media screen and ( min-width: 375px )
   form
     height: 48px
     grid-template-columns: 1fr auto
     gap: 0
     align-content: center
+
+  input
+    &:not(:focus):invalid
+      ~ .error
+        position: absolute
+        margin-left: 30px
+        
+      + img      
+        bottom: 15px
+
 
   input
     width: 110%
@@ -183,6 +220,15 @@ button
   form
     max-width: 70%
 
+  .main-content
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto auto 1fr auto
+    margin-bottom: 40px
+
+  .main-footer
+    text-align: left
+
 @media screen and ( min-width: 768px )
   .container
     padding-left: 10%
@@ -208,7 +254,8 @@ button
   main
     display: grid
     grid-template-columns: minmax(57%, 1.5fr) auto
-    grid-template-rows: auto 1fr
+    grid-template-rows: auto 1fr auto
+    height: 100vh
 
   .main-content
     grid-column: 1/1
